@@ -16,7 +16,7 @@ get-website | select name,id,state,physicalpath,
 
 Write-Host "#####Getting App-pools Hosted on the server######" -ForegroundColor Green;
 
-Get-ChildItem -Path "IIS:\AppPools\" | Select-Object name, state, managedRuntimeVersion, managedPipelineMode, @{e={$_.processModel.username};l="username"},@{e={$_.processModel.identityType};l="identityType"}
+Get-ChildItem -Path "IIS:\\AppPools\\" | Select-Object name, state, managedRuntimeVersion, managedPipelineMode, @{e={$_.processModel.username};l="username"},@{e={$_.processModel.identityType};l="identityType"}
 format-table -AutoSize -wrap;
 
 Write-Host "#####Getting WebApplications Hosted on the server######" -ForegroundColor Green;
